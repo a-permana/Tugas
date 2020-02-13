@@ -1,11 +1,8 @@
 module.exports = function(app){
 const express = require("express");
 const Mongoose = require("mongoose");
-// const app = express();
 
 app.use(express.json());
-
-Mongoose.connect("mongodb://localhost/express_mongoose");
 
 const BooksModel = Mongoose.model("books", {
         title: String,
@@ -54,9 +51,9 @@ app.put("/books/:id", async (request, response) => {
         response.status(500).send(error);
         }
         });
-app.delete("/books/:id", async (request, response) => {try {
-        var result = await BooksModel.deleteOne({ _id: request.params.id }).exec(
-        );
+app.delete("/books/:id", async (request, response) => {
+        try {
+        var result = await BooksModel.deleteOne({ _id: request.params.id }).exec();
         response.send(result);
         } catch (error) {
         response.status(500).send(error);
