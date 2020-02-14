@@ -3,7 +3,7 @@ module.exports = (sequelize, Sequelize) => {
     name: {
     type: Sequelize.STRING
     },
-    username1: {
+    username: {
     type: Sequelize.STRING
     },
     email: {
