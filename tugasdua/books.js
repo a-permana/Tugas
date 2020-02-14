@@ -1,7 +1,6 @@
 var model = require("../models/index");
 const express = require("express");
 
-
 module.exports = function(app){
 const { check, validationResult } = require('express-validator');
 app.post("/books", [ 
