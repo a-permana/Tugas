@@ -8,8 +8,8 @@ app.use(morgan('common'))
 
 require('./router/router.js')(app);
 
-const db = require('./config/db.js');
-const Role = db.role;
+// const db = require('./config/db.js');
+// const Role = db.role;
 
 // force: true will drop the table if it already exists (comment this part after
 // first run, to disable migration)
