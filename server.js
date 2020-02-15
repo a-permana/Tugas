@@ -8,8 +8,9 @@ app.use(morgan('common'))
 
 require('./router/router.js')(app);
 
-// const db = require('./config/db.js');
-// const Role = db.role;
+const db = require('./app/db.js');
+
+const Role = db.role;
 
 // force: true will drop the table if it already exists (comment this part after
 // first run, to disable migration)
@@ -20,12 +21,13 @@ require('./router/router.js')(app);
 // });
 
 // require('./app/route/project.route.js')(app);
-// Create a Server;
 
+// Create a Server;
 var server = app.listen(8080, "127.0.0.1", function() {
-var host = server.address().address;
-var port = server.address().port;
-console.log("App listening at http://%s:%s", host, port);
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log("App listening at http://%s:%s", host, port);
 });
 
 // function initial() {
